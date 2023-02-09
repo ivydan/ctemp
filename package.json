@@ -1,0 +1,22 @@
+{
+  "name": "ctemp",
+  "version": "1.0.0",
+  "description": "create template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivydan/ctemp.git"
+  },
+  "keywords": [
+    "ctemp"
+  ],
+  "author": "JuDanDan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivydan/ctemp/issues"
+  },
+  "homepage": "https://github.com/ivydan/ctemp#readme"
+}
