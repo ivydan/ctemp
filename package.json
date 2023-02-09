@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "temp-cli": "index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ivydan/ctemp.git"
@@ -18,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/ivydan/ctemp/issues"
   },
-  "homepage": "https://github.com/ivydan/ctemp#readme"
+  "homepage": "https://github.com/ivydan/ctemp#readme",
+  "devDependencies": {
+    "c-temp": "^1.0.0"
+  }
 }
