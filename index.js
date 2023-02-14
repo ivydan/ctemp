@@ -1,12 +1,10 @@
-/*
- * @Author: Ju Dandan judandan0608@163.com
- * @Date : 2022-12-29 14:18:44
- * @LastEditors: Ju Dandan
- * @LastEditTime: 2023-02-09 10:57:29
- * @Description: index
- * 
- */
+#!/usr/bin/env node
+// 它声明了脚本文件的解释程序，脚本文件有很多，我们要运行这个index.js
+// 就得告诉系统你是要用什么来执行我们的脚本，这里当然是使用node了。
+// 测试一下看可以用不。使用npm link命令，它的作用是把当前文件夹拷贝到node全局包的安装环境下，
+// 当拷贝过去以后你就可以把他当成一个全局包使用了，拷贝完后直接使用c-temp来运行脚本就可以了
 
+console.log('春水满四泽，夏云多奇峰。秋月扬明晖，冬岭秀孤松！')
 const { mkdir } = require('./utils/mkdir')
 const { writeTSFile, writeLessFile } = require('./utils/writeFIle')
 const path = require('path')
@@ -18,7 +16,6 @@ const process = require('process')
 
 const argvList = process.argv
 const argvList2 = argvList[2]
-console.log(argvList)
 // argvList[2]获取命令行第一个参数
 // 创建src文件夹
 mkdir(path.join(__dirname, `src/${argvList2}`))
