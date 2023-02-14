@@ -37,9 +37,9 @@ if (argvList2) {
     }
 
     const indexPath = path.join(process.cwd(), `src/${argvList2}`)
-    mkdir(indexPath)
-
     if (!fs.existsSync(indexPath)) {
+        // 创建目录
+        mkdir(indexPath)
         // 写入文件
         writeTSFile(path.join(process.cwd(), `src/${argvList2}/index.ts`), argvList2)
         writeLessFile(path.join(process.cwd(), `src/${argvList2}/index.module.less`), argvList2)
@@ -51,7 +51,7 @@ if (argvList2) {
     console.log(color.red_bbt('tips : 请输入需要定义的文件名称！'))
 }
 
-console.log(color.black_bbt('by: Ju DanDan'))
+// console.log(color.black_bbt('by: Ju DanDan'))
 
 // 建议使用npm version 1.0.8 这样的命令去修改，因为该命令会顺带把package-lock.json文件中的版本号也改了。
 // 运行npm publish 发布

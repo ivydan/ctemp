@@ -17,7 +17,7 @@ const color = require('colors-cli/safe')
 
 function mkdir(dirpath) {
     // 创建文件夹
-    fs.mkdir(dirpath, function(err){
+    fs.mkdirSync(dirpath, function(err){
         // 判断目录是否存在
         if(fs.existsSync(dirpath)){
             return console.log(color.red.bold('ERROR: directory is exist!'));

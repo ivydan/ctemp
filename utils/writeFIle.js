@@ -4,6 +4,7 @@
 
 const path = require('path')
 const fs = require('fs')
+const color = require('colors-cli/safe')
 
 const titleCase = function(str) {
 	newStr = str.slice(0, 1).toUpperCase() + str.slice(1).toLowerCase();
@@ -50,7 +51,7 @@ function writeTSFile(dirpath, name) {
 		if (err) {
 			return console.error(err)
 		}
-		console.log('JS: write file surrcss!')
+		console.log(color.green('JS: write file surrcss!'))
 	})
 }
 
@@ -73,7 +74,7 @@ function writeLessFile(dirpath, name) {
 		if (err) {
 			return console.error(err)
 		}
-		console.log('LESS: write file surrcss!')
+		console.log(color.green('LESS: write file surrcss!'))
 	})
 }
 
