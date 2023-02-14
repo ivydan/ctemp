@@ -43,6 +43,7 @@ if (argvList2) {
         // 写入文件
         writeTSFile(path.join(process.cwd(), `src/${argvList2}/index.ts`), argvList2)
         writeLessFile(path.join(process.cwd(), `src/${argvList2}/index.module.less`), argvList2)
+        console.log(color.green_bbt('Success!'))
     }
 
 
