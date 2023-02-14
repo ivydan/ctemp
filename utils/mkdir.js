@@ -13,12 +13,17 @@
  */
 const path = require('path')
 const fs = require('fs')
+const color = require('colors-cli/safe')
 
 function mkdir(dirpath) {
     // 创建文件夹
     fs.mkdir(dirpath, function(err){
+        // 判断目录是否存在
+        if(fs.existsSync(dirpath)){
+            return console.log(color.red.bold('ERROR: directory is exist!'));
+        }
         if(err){
-            return console.error(err)
+            return console.log(color.red.bold(err));
         }
         // console.log('dir surrcss!')
     })

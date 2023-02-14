@@ -1,6 +1,6 @@
 {
   "name": "c-temp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "create template",
   "main": "index.js",
   "scripts": {
@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/ivydan/ctemp#readme",
   "devDependencies": {
-    "c-temp": "1.0.1"
+    "colors-cli": "^1.0.29"
   }
 }
