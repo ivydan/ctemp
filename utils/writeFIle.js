@@ -48,10 +48,9 @@ function writeTSFile(dirpath, name) {
 	// 创建JS文件
 	fs.writeFile(dirpath, str, function (err) {
 		if (err) {
-			return console.log('EEXIST!')
 			return console.error(err)
 		}
-		console.log('write file surrcss!')
+		console.log('JS: write file surrcss!')
 	})
 }
 
@@ -72,10 +71,9 @@ function writeLessFile(dirpath, name) {
 	// 创建JS文件
 	fs.writeFile(dirpath, str, function (err) {
 		if (err) {
-			return console.log('EEXIST!')
 			return console.error(err)
 		}
-		console.log('write file surrcss!')
+		console.log('LESS: write file surrcss!')
 	})
 }
 

@@ -18,10 +18,9 @@ function mkdir(dirpath) {
     // 创建文件夹
     fs.mkdir(dirpath, function(err){
         if(err){
-            return console.log(dirpath, err)
             return console.error(err)
         }
-        console.log('dir surrcss!')
+        // console.log('dir surrcss!')
     })
 }
 

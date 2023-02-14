@@ -18,6 +18,7 @@ const argvList = process.argv
 const argvList2 = argvList[2]
 // argvList[2]获取命令行第一个参数
 // 创建src文件夹
+mkdir(path.join(__dirname, `src`))
 mkdir(path.join(__dirname, `src/${argvList2}`))
 // 写入文件
 writeTSFile(path.join(__dirname, `src/${argvList2}/index.ts`), argvList2)
