@@ -22,13 +22,8 @@ build/
 /.idea
 .idea
 .DS_Store
-/captures
 
 target/
-
-node_modules/
-!node_modules/captain-ui
-
 dist/
 src/
 *.log
