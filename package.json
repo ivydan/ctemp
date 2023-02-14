@@ -1,6 +1,6 @@
 {
   "name": "c-temp",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "create template",
   "main": "index.js",
   "scripts": {
