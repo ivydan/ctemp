@@ -465,7 +465,7 @@ const getCodeString = function (name) {
  * @param name: 名称
  * @return {*}
  */
- function writeIAIndexTSFile(dirpath, name) {
+function writeIAIndexTSFile(dirpath, name) {
 	const str = getCodeString(name)
 	// 创建JS文件
 	fs.writeFile(dirpath, str, function (err) {
@@ -613,7 +613,7 @@ const getStaString = function (name) {
  * @param name: 名称
  * @return {*}
  */
- function writeIASratisticsTSFile(dirpath, name) {
+function writeIASratisticsTSFile(dirpath, name) {
 	const str = getStaString(name)
 	// 创建JS文件
 	fs.writeFile(dirpath, str, function (err) {
