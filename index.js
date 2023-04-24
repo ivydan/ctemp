@@ -53,7 +53,7 @@ if (argvList2) {
             writeLessFile(path.join(process.cwd(), `src/${argvList3}/index.module.less`), argvList3)
             console.log(color.green_bbt('Success!'))
         }else{
-            console.log(color.red_bbt('同名文件夹已存在，请输入其他目录名称！'))
+            console.log(color.red_bbt('同名文件夹已存在，请输入其他目录名称！')) 
         }
     }
     /**
@@ -78,14 +78,41 @@ if (argvList2) {
             console.log(color.red_bbt('同名文件夹已存在，请输入其他目录名称！'))
         }
     }
+
+    /**
+     * -icb
+     * 进入页完整版模版
+     * 包含，埋点，数据请求，下拉刷新，表格，统计说明
+     */
+     if (argvList2 === '-icb') {
+        // 目标文件路径 
+        const indexPath = path.join(process.cwd(), `${argvList3 || 'barIndex'}.tsx`)
+        // 校验目标文件夹是否存在
+        if (!fs.existsSync(indexPath)) {
+            const { writeChartTSFile, writeBarIndexTSFile } = require('./template/component/chart')
+            // 写入文件
+            writeBarIndexTSFile(path.join(indexPath), argvList3 || 'barIndex')
+            writeChartTSFile(path.join(process.cwd(), `barChart.tsx`), 'barChart')
+            console.log(color.green_bbt('Success!'))
+        }else{
+            console.log(color.red_bbt('同名文件已存在，请输入其他名称！'))
+        }
+    }
 } else {
     console.log('     ')
     console.log(color.red_bbt('tips: 请输入相关配置参数'))
     console.log(color.red('exp: temp-cli -i index'))
     console.log('     ')
     console.log(color.green_bbt('第一个参数为：模版类型'))
+    // 进入页模版
     console.log(color.green('-i  : 进入页模版'))
     console.log(color.green('-ia : 进入页完整版模版'))
+
+    // 进入页组件模版
+    console.log(color.red_bbt('tips: 请输入相关配置参数'))
+    console.log(color.red('exp: temp-cli -icb chart'))
+    console.log(color.green('-icb: 柱状图组件模版，柱状图默认文件夹名称barChart'))
+
     console.log(color.green('-c  : 组件模版'))
     console.log(color.green('-cl : 组件模版带样式文件'))
     console.log(color.green('-cf : 函数组件模版'))
