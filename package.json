@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/ivydan/ctemp#readme",
   "dependencies": {
-    "colors-cli": "^1.0.29"
+    "colors-cli": "^1.0.29",
+    "yargs": "^17.7.1"
   }
 }
