@@ -165,5 +165,5 @@ if (argvList2) {
 }
 
 // console.log(color.black_bbt('by: Ju DanDan')
-// 建议使用npm version 1.0.8 这样的命令去修改，因为该命令会顺带把package-lock.json文件中的版本号也改了。
+// 建议使用npm version 1.0.9 这样的命令去修改，因为该命令会顺带把package-lock.json文件中的版本号也改了。
 // 运行npm publish 发布

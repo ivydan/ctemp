@@ -1,11 +1,10 @@
-const path = require('path')
-const fs = require('fs')
-const color = require('colors-cli/safe')
-const { titleCase } = require('../../utils/index')
-
+const path = require("path");
+const fs = require("fs");
+const color = require("colors-cli/safe");
+const { titleCase } = require("../../utils/index");
 
 const getIndexCodeString = function (name) {
-    return `import * as React from "react";
+  return `import * as React from "react";
 import { Button, Spin } from "antd";
 import { Selector } from "antd-mobile";
 import _ from "lodash";
@@ -46,7 +45,9 @@ interface I${titleCase(name)}State {
 }
 
 const defaultSrcHubCodeList = landingQuery.srcHubCodeList?.split(",");
-class ${titleCase(name)} extends React.Component<I${titleCase(name)}Props, I${titleCase(name)}State> {
+class ${titleCase(name)} extends React.Component<I${titleCase(
+    name
+  )}Props, I${titleCase(name)}State> {
     state: I${titleCase(name)}State = {
     selectDate: null,
     chartData: null,
@@ -604,8 +605,8 @@ class ${titleCase(name)} extends React.Component<I${titleCase(name)}Props, I${ti
     }
 }
 export default ${titleCase(name)};
-`
-}
+`;
+};
 
 /**
  * @description: 创建TS模版文件
@@ -614,18 +615,18 @@ export default ${titleCase(name)};
  * @return {*}
  */
 function writeIAIndexTSFile(dirpath, name) {
-    const str = getIndexCodeString(name)
-    // 创建JS文件
-    fs.writeFile(dirpath, str, function (err) {
-        if (err) {
-            return console.error(err)
-        }
-        console.log(color.green('JS: write file surrcss!'))
-    })
+  const str = getIndexCodeString(name);
+  // 创建JS文件
+  fs.writeFile(dirpath, str, function (err) {
+    if (err) {
+      return console.error(err);
+    }
+    console.log(color.green("JS: write file surrcss!"));
+  });
 }
 
 const getLessString = function (name) {
-    return `.${titleCase(name)}{
+  return `.${titleCase(name)}{
     padding: 0;
     .agingVolume,
     .vehicleOnTime {
@@ -651,8 +652,8 @@ const getLessString = function (name) {
         justify-content: end;
         }
     }
-}`
-}
+}`;
+};
 
 /**
  * @description: 创建LESS模版文件
@@ -661,19 +662,18 @@ const getLessString = function (name) {
  * @return {*}
  */
 function writeIALessFile(dirpath, name) {
-    const str = getLessString(name)
-    // 创建JS文件
-    fs.writeFile(dirpath, str, function (err) {
-        if (err) {
-            return console.error(err)
-        }
-        console.log(color.green('LESS: write file surrcss!'))
-    })
+  const str = getLessString(name);
+  // 创建JS文件
+  fs.writeFile(dirpath, str, function (err) {
+    if (err) {
+      return console.error(err);
+    }
+    console.log(color.green("LESS: write file surrcss!"));
+  });
 }
 
-
 const getStaString = function (name) {
-    return `import * as React from "react";
+  return `import * as React from "react";
 import CustomerDialog from "scripts/components/CustomerDialog";
 
 interface IStatisticsDescriptionProps {
@@ -754,8 +754,8 @@ class StatisticsDescription extends React.Component<
     this.setState({ show: true, type, title });
     };
 }
-export default StatisticsDescription;`
-}
+export default StatisticsDescription;`;
+};
 
 /**
  * @description: 创建TS模版文件
@@ -764,18 +764,18 @@ export default StatisticsDescription;`
  * @return {*}
  */
 function writeIASratisticsTSFile(dirpath, name) {
-    const str = getStaString(name)
-    // 创建JS文件
-    fs.writeFile(dirpath, str, function (err) {
-        if (err) {
-            return console.error(err)
-        }
-        console.log(color.green('JS: write file surrcss!'))
-    })
+  const str = getStaString(name);
+  // 创建JS文件
+  fs.writeFile(dirpath, str, function (err) {
+    if (err) {
+      return console.error(err);
+    }
+    console.log(color.green("JS: write file surrcss!"));
+  });
 }
 
-const getChartString = function(name){
-    return `/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+const getChartString = function (name) {
+  return `/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import * as React from "react";
 import moment from "moment";
 import EChartsComponent5 from "scripts/components/commons/components/ECharts5";
@@ -1125,8 +1125,14 @@ class BarChart extends React.Component<IBarChartProps, IBarChartState> {
         ],
     };
     }
-`
+
+  render() {
+    return <div className={styles.BarChart}>{this.renderChart()}</div>;
+  }
 }
+export default BarChart;
+`;
+};
 
 /**
  * @description: 创建Chart TS模版文件
@@ -1135,18 +1141,18 @@ class BarChart extends React.Component<IBarChartProps, IBarChartState> {
  * @return {*}
  */
 function writeIAChartTSFile(dirpath, name) {
-    const str = getChartString(name)
-    // 创建JS文件
-    fs.writeFile(dirpath, str, function (err) {
-        if (err) {
-            return console.error(err)
-        }
-        console.log(color.green('JS: write file surrcss!'))
-    })
+  const str = getChartString(name);
+  // 创建JS文件
+  fs.writeFile(dirpath, str, function (err) {
+    if (err) {
+      return console.error(err);
+    }
+    console.log(color.green("JS: write file surrcss!"));
+  });
 }
 
-const getTableString = function(name){
-    return `import { Table } from "antd";
+const getTableString = function (name) {
+  return `import { Table } from "antd";
 import * as React from "react";
 import classNames from "classnames";
 import { ArrowDownOutlined, ArrowUpOutlined } from "@ant-design/icons";
@@ -1327,8 +1333,8 @@ class GroupTable extends React.Component<IGroupTableProps, IGroupTableState> {
     );
     }
 }
-export default GroupTable;`
-}
+export default GroupTable;`;
+};
 
 /**
  * @description: 创建带有汇总行的table TS模版文件
@@ -1337,18 +1343,18 @@ export default GroupTable;`
  * @return {*}
  */
 function writeIATableTSFile(dirpath, name) {
-    const str = getTableString(name)
-    // 创建JS文件
-    fs.writeFile(dirpath, str, function (err) {
-        if (err) {
-            return console.error(err)
-        }
-        console.log(color.green('JS: write file surrcss!'))
-    })
+  const str = getTableString(name);
+  // 创建JS文件
+  fs.writeFile(dirpath, str, function (err) {
+    if (err) {
+      return console.error(err);
+    }
+    console.log(color.green("JS: write file surrcss!"));
+  });
 }
 
-const getTableTabsString = function(){
-    return `import { Table } from "antd";
+const getTableTabsString = function () {
+  return `import { Table } from "antd";
 import { Tabs } from "antd-mobile";
 import * as React from "react";
 import { formatNumber } from "scripts/components/commons/numberFormat";
@@ -1539,8 +1545,8 @@ class CompanyTable extends React.Component<
     );
     }
 }
-export default CompanyTable;`
-}
+export default CompanyTable;`;
+};
 
 /**
  * @description: 创建带有汇总行的table and Tab TS模版文件
@@ -1549,14 +1555,21 @@ export default CompanyTable;`
  * @return {*}
  */
 function writeIATableTabsTSFile(dirpath, name) {
-    const str = getTableTabsString(name)
-    // 创建JS文件
-    fs.writeFile(dirpath, str, function (err) {
-        if (err) {
-            return console.error(err)
-        }
-        console.log(color.green('JS: write file surrcss!'))
-    })
+  const str = getTableTabsString(name);
+  // 创建JS文件
+  fs.writeFile(dirpath, str, function (err) {
+    if (err) {
+      return console.error(err);
+    }
+    console.log(color.green("JS: write file surrcss!"));
+  });
 }
 
-module.exports = { writeIATableTabsTSFile, writeIAIndexTSFile, writeIALessFile, writeIASratisticsTSFile, writeIAChartTSFile, writeIATableTSFile }
+module.exports = {
+  writeIATableTabsTSFile,
+  writeIAIndexTSFile,
+  writeIALessFile,
+  writeIASratisticsTSFile,
+  writeIAChartTSFile,
+  writeIATableTSFile,
+};
